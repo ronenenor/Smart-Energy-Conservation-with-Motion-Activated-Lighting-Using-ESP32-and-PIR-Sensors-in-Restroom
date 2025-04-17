@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Smart Home Control</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Smart Energy-Saving Lighting System</h1>
+      <div class="connection-status">
+        <span id="status-indicator" class="disconnected"></span>
+        <span id="status-text">Disconnected</span>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <div class="status-card">
+        <h3>Device Status</h3>
+        <div class="relay-grid">
+          <div class="relay-item">
+            <div class="relay-indicator">
+              <div id="bulb1" class="relay-icon"></div>
+              <p id="bulb1-status">OFF</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="toggle1">
+              <span class="slider round"></span>
+            </label>
+            <button id="auto1" class="control-button active">Auto Mode</button>
+            <p class="relay-label">Zone 1</p>
+          </div>
+          <div class="relay-item">
+            <div class="relay-indicator">
+              <div id="bulb2" class="relay-icon"></div>
+              <p id="bulb2-status">OFF</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="toggle2">
+              <span class="slider round"></span>
+            </label>
+            <button id="auto2" class="control-button active">Auto Mode</button>
+            <p class="relay-label">Zone 2</p>
+          </div>
+          <div class="relay-item">
+            <div class="relay-indicator">
+              <div id="bulb3" class="relay-icon"></div>
+              <p id="bulb3-status">OFF</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="toggle3">
+              <span class="slider round"></span>
+            </label>
+            <button id="auto3" class="control-button active">Auto Mode</button>
+            <p class="relay-label">Zone 3</p>
+          </div>
+        </div>
+        
+        <div class="all-control">
+          <button id="toggle-all-on" class="control-button">Turn All On</button>
+          <button id="toggle-all-off" class="control-button off">Turn All Off</button>
+        </div>
+        
+        <div class="motion-status">
+          <div class="sensors-container">
+            <div id="sensor1-status" class="sensor-inactive">
+              <i class="fas fa-user-slash"></i>
+              <span>No Motion (Sensor 1)</span>
+            </div>
+            <div id="sensor2-status" class="sensor-inactive">
+              <i class="fas fa-user-slash"></i>
+              <span>No Motion (Sensor 2)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-card">
+        <h3>Control Panel</h3>
+        
+        <div class="control-section">
+          <h4>Auto Mode Timeout</h4>
+          <div class="slider-container">
+            <input type="range" min="1" max="300" value="90" class="range-slider" id="cooldown-time">
+            <div class="slider-value">
+              <span id="timeout-value">90</span> seconds
+            </div>
+          </div>
+          <button id="save-cooldown" class="control-button">Save Timeout</button>
+        </div>
+      </div>
+
+      <div class="stats-card">
+        <h3>System Statistics</h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-label">IP Address</div>
+            <div class="stat-value" id="ip-address">-</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Connection Status</div>
+            <div class="stat-value" id="connection-status">Disconnected</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Smart Energy-Saving Lighting System</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
